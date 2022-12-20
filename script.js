@@ -30,7 +30,7 @@ const people = [
 // 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
 export function myfilter() {
     inventors.filter((inventor)=>{
-        if (inventor.year > 1499 && inventor.year < 1600){
+        if (inventor.year >= 1500 && inventor.year < 1600){
             return inventor
         }
     })
@@ -42,7 +42,7 @@ console.log(myfilter())
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
     inventors.map((inventor)=>{
-        return (inventor.first +" "+ inventor.last) 
+        return inventor.first + ' ' + inventor.last
      })
 }
 console.log(map())
