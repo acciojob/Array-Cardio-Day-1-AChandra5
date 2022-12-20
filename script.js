@@ -31,21 +31,21 @@ const people = [
 export function myfilter() {
     inventors.filter((inventor)=>{
         if (inventor.year > 1499 && inventor.year < 1600){
-            console.log (inventor)
+            return inventor
         }
     })
 }
-myfilter()
+console.log(myfilter())
 
 // Array.prototype.map()
 // 2. Give us an array of the inventor first and last names (i.e. full name)
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
     inventors.map((inventor)=>{
-        console.log(inventor.first +" "+ inventor.last) 
+        return (inventor.first +" "+ inventor.last) 
      })
 }
-map()
+console.log(map())
 
 
 // Array.prototype.sort()
@@ -54,9 +54,9 @@ export function sort() {
     inventors.sort((a, b)=>{
         return a.year - b.year
     })
-    console.log(inventors)
+    return inventors
 }
-sort()
+console.log(sort())
 
 
 // Array.prototype.reduce()
@@ -68,10 +68,10 @@ export function reduce() {
         yearsArray.push((inventor.passed - inventor.year))
     })
     const sum = yearsArray.reduce((acc,cur)=>acc+cur,0)
-    console.log(sum)
+    return sum
     
 }
-reduce()
+console.log(reduce())
 
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
@@ -93,9 +93,9 @@ export function sortbylived() {
         delete sorted[i].age
 
     }
-    console.log(sorted);
+    return sorted;
     }
-    sortbylived()          
+    console.log(sortbylived())          
 
 
 
@@ -114,9 +114,9 @@ export function sortByLastName() {
         return 0;
       });
       
-      console.log(people);
+      return people;
     }
-    sortByLastName()
+    console.log(sortByLastName())
 
 
 // 7. Reduce Exercise
@@ -133,6 +133,6 @@ export function reducedSum() {
         return count
         
     }, {})
-    console.log(transportCounts);
+    return transportCounts;
 }
-reducedSum()
+console.log(reducedSum())
