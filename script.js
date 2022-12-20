@@ -34,8 +34,8 @@ export function myfilter() {
             console.log (inventor)
         }
     })
-
 }
+myfilter()
 
 // Array.prototype.map()
 // 2. Give us an array of the inventor first and last names (i.e. full name)
@@ -45,6 +45,7 @@ export function map() {
         console.log(inventor.first +" "+ inventor.last) 
      })
 }
+map()
 
 
 // Array.prototype.sort()
@@ -55,6 +56,7 @@ export function sort() {
     })
     console.log(inventors)
 }
+sort()
 
 
 // Array.prototype.reduce()
@@ -69,6 +71,7 @@ export function reduce() {
     console.log(sum)
     
 }
+reduce()
 
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
@@ -92,7 +95,7 @@ export function sortbylived() {
     }
     console.log(sorted);
     }
-               
+    sortbylived()          
 
 
 
@@ -113,7 +116,7 @@ export function sortByLastName() {
       
       console.log(people);
     }
-
+    sortByLastName()
 
 
 // 7. Reduce Exercise
@@ -132,3 +135,4 @@ export function reducedSum() {
     }, {})
     console.log(transportCounts);
 }
+reducedSum()
