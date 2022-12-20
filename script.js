@@ -50,19 +50,11 @@ export function map() {
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest and return the sorted array
 export function sort() {
-    const sortedInventors = inventors.sort((a, b) => {
-        if (a.year < b.year) {
-          return -1;
-        } else if (a.year > b.year) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      
-      console.log(sortedInventors);
-      }
-
+    inventors.sort((a, b)=>{
+        return a.year - b.year
+    })
+    console.log(inventors)
+}
 
 
 // Array.prototype.reduce()
@@ -80,23 +72,26 @@ export function reduce() {
 
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
-        inventors.map((inventor) => {
-             inventor.age = (inventor.passed - inventor.year)
-        })
-       
-        const sorted = inventors.sort((a,b)=>{
-          if(a.age < b.age){
-            return -1
-          } else if(a.year > b.year) {
-            return 1
-          } else {
-            return 0
-          }
-       
-        })
-        console.log(sorted);
-       
-        }
+    inventors.map((inventor) => {
+         inventor.age = (inventor.passed - inventor.year)
+    })
+   
+    const sorted = inventors.sort((a,b)=>{
+      if(a.age < b.age){
+        return -1
+      } else if(a.year > b.year) {
+        return 1
+      } else {
+        return 0
+      }
+   
+    })
+    for(let i =0; i<sorted.length; i++){
+        delete sorted[i].age
+
+    }
+    console.log(sorted);
+    }
                
 
 
